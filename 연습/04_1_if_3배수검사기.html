@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="displayText"></h1>      <!-- 결과값을 h1 태그, id=displayText라는 요소에 지정해 출력할 것임 -->
+    <script>
+
+        // 3의 배수 인지 검사하는 검사기 만들기.
+
+        /* 
+        로직 : 
+
+        (1) 유저가 값을 입력했는지?
+
+        (2) 입력했다면 그게 3의 배수인지? */
+
+        //------------------------------------------------------
+        
+        // (1) 입력
+        
+        var userNum = prompt("자연수를 하나 입력하세요.");
+
+        var displayArea = document.querySelector('#displayText');   // 표시할 영역에 대응하는 스크립트를 displayArea로 지정해주는 모습!
+        
+        // (1-1) 입력을 했는지 검증
+        
+        if (userNum != null) {      // 입력하지 않고 취소를 누르면 null이 저장됨.
+
+            // 값이 입력되었을 때 다음 단계
+            // (2) 3의 배수인지 검증
+    
+            // 3의 배수는 3으로 나누었을 때 나머지가 0.
+            
+            if (userNum % 3 === 0) {    // ===으로 해줘야하는구만
+    
+                // 3의 배수이면? 
+
+                displayArea.innerHTML = userNum + "은 3의 배수입니다.";
+
+            } else {
+                
+                //3의 배수가 아니면?
+
+                displayArea.innerHTML = userNum + "은 3의 배수가 아닙니다.";
+
+            }
+
+        }
+        else {
+
+            alert("입력이 취소되었습니다.");    //false의 경우 취소 알림을 보냄
+        
+        }
+    </script>
+</body>
+</html>
